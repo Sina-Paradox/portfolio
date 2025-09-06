@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -30,6 +31,44 @@ a {
   color: #0077b5;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
+}
+
+.projects ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.projects ul li {
+  margin-bottom: 15px;
+}
+
+.projects a {
+  color: #0077b5;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  header h2 {
+    font-size: 1em;
+  }
+  section {
+    padding: 10px;
+  }
 }
