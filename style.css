@@ -66,10 +66,12 @@ footer {
   .profile-photo {
     position: static;
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 20px auto 0 auto;
+    order: 0;
   }
   header {
     padding-left: 0;
+    order: 1;
   }
   header h1 {
     font-size: 1.5em;
