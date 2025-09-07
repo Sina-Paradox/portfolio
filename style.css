@@ -250,30 +250,11 @@ footer {
     background: 
       /* Red and white blocks pattern for sidewalks */
       repeating-linear-gradient(
-        45deg,
-        transparent 0%,
-        transparent 15%,        
-        #ff0000 15%,
-        #ff0000 16%,
-        #ffffff 16%,
-        #ffffff 17%,
-        #ff0000 17%,
-        #ff0000 18%,
-        transparent 18%,
-        transparent 100%,
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        transparent 0%,        
-        transparent 82%,        
-        #ff0000 82%,
-        #ff0000 83%,
-        #ffffff 83%,
-        #ffffff 84%,
-        #ff0000 84%,
-        #ff0000 85%,
-        transparent 85%,        
-        transparent 100%
+        to bottom,        
+        #ff0000 0px,
+        #ff0000 60px,
+        #ffffff 60px,
+        #ffffff 120px,
       ),
       /* Subtle concrete texture pattern */
       radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
@@ -311,10 +292,10 @@ footer {
     width: 16px;
     background: repeating-linear-gradient(
       to bottom,
-      #ffff00 0px,      /* Yellow line starts */
-      #ffff00 120px,     /* Yellow line continues for 30px */
-      transparent 120px, /* Gap starts */
-      transparent 240px  /* Gap continues for 30px */
+      #ffff00 60px,      /* Yellow line starts */
+      #ffff00 180px,     /* Yellow line continues for 30px */
+      transparent 180px, /* Gap starts */
+      transparent 300px  /* Gap continues for 30px */
     );
     transform: translateX(-50%);
     z-index: -1;
