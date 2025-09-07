@@ -28,8 +28,8 @@ h2 {
 }
 
 .profile-photo {
-  position: block;
-  margin: 0 auto 10px auto;
+  display: block;
+  margin: 0 auto 0 auto;
   width: 80px;
   height: 80px;
   border-radius: 50%;
