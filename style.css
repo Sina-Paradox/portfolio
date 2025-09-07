@@ -262,6 +262,7 @@ footer {
       inset 0 0 50px rgba(0, 0, 0, 0.3),
       0 0 20px rgba(0, 0, 0, 0.5);
     padding: 20px;
+    min-height: 100vh;
   }
 }
 
