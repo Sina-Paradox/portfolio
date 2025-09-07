@@ -8,17 +8,6 @@ body {
   color: #222;
 }
 
-.profile-photo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  border: 3px solid #fff;
-}
-
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -36,6 +25,16 @@ h2 {
   font-weight: 400;
   color: #555;
   margin: 0 0 0 10px 0;
+}
+
+.profile-photo {
+  position: block;
+  margin: 0 auto 20px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  border: 3px solid #fff;
 }
 
 h3 {
