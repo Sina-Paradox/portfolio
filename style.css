@@ -243,15 +243,21 @@ footer {
 /* Street/Sidewalk Design for Large Screens */
 @media (min-width: 768px) {
   body {
-    background: linear-gradient(
-      to right,
-      #c0c0c0 0%,           /* Left sidewalk starts - light gray */
-      #c0c0c0 20%,          /* Left sidewalk continues */
-      #2c2c2c 20%,          /* Road starts - dark asphalt */
-      #2c2c2c 80%,          /* Road continues - dark asphalt */
-      #c0c0c0 80%,          /* Right sidewalk starts */
-      #c0c0c0 100%          /* Right sidewalk ends */
-    );
+    background: 
+      /* Subtle concrete texture pattern */
+      radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #d0d0d0 1px, transparent 1px),
+      /* Main street gradient */
+      linear-gradient(
+        to right,
+        #c0c0c0 0%,           /* Left sidewalk starts - light gray */
+        #c0c0c0 20%,          /* Left sidewalk continues */
+        #2c2c2c 20%,          /* Road starts - dark asphalt */
+        #2c2c2c 80%,          /* Road continues - dark asphalt */
+        #c0c0c0 80%,          /* Right sidewalk starts */
+        #c0c0c0 100%          /* Right sidewalk ends */
+      );
+    background-size: 20px 20px, 20px 20px, 100% 100%;
     min-height: 100vh;
   }
   .road-container {
