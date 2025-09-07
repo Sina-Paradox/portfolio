@@ -248,7 +248,7 @@ footer {
   body {
     background: 
       /* Red and white blocks pattern for sidewalks */
-      repeating-linear-gradient(
+      linear-gradient(
         45deg,
         transparent 0%,
         transparent 15%,        
@@ -259,7 +259,7 @@ footer {
         transparent 18%,
         transparent 100%,
       ),
-      repeating-linear-gradient(
+      linear-gradient(
         315deg,
         transparent 0%,        
         transparent 82%,        
@@ -297,7 +297,7 @@ footer {
         #c0c0c0 80%,          /* Right sidewalk starts */
         #c0c0c0 100%          /* Right sidewalk ends */
       );
-    background-size: 20px 20px, 20px 20px, 100% 100%;
+    background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
     min-height: 100vh;
   }
   .road-container {
