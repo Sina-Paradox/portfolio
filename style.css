@@ -29,9 +29,9 @@ h2 {
 
 .profile-photo {
   position: block;
-  margin: 0 auto 20px auto;
-  width: 120px;
-  height: 120px;
+  margin: 0 auto 10px auto;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
   border: 3px solid #fff;
@@ -243,18 +243,11 @@ footer {
   body {
     padding: 10px;
   }
-  .profile-photo {
-    position: static;
-    display: block;
-    margin: 20px auto 0 auto;
-    order: 0;
-  }
   header {
     padding-left: 0;
   }
   header h1 {
     font-size: 1.5em;
-    order: 1;
   }
   header h2 {
     font-size: 0.7em;
