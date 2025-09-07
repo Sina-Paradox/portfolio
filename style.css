@@ -264,7 +264,24 @@ footer {
     padding: 40px 20px;
     min-height: calc(100vh + 40px);
     position: relative;
-    z-index: 1;
+    z-index: -2;
+  }
+  .road-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #ffff00 0px,      /* Yellow line starts */
+      #ffff00 30px,     /* Yellow line continues for 30px */
+      transparent 30px, /* Gap starts */
+      transparent 60px  /* Gap continues for 30px */
+    );
+    transform: translateX(-50%);
+    z-index: -1;
   }
 }
 
