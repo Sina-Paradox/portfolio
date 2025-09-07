@@ -247,9 +247,31 @@ footer {
 @media (min-width: 768px) {
   body {
     background: 
+      /* Red and white blocks pattern for sidewalks */
+      repeating-linear-gradient(
+        45deg,
+        #ff4444 0px,
+        #ff4444 8px,
+        #ffffff 8px,
+        #ffffff 16px
+      ),
       /* Subtle concrete texture pattern */
       radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
       radial-gradient(circle at 75% 75%, #d0d0d0 1px, transparent 1px),
+      /* Sidewalk elevation shadow */
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 18%,
+        rgba(0, 0, 0, 0.4) 18%,
+        rgba(0, 0, 0, 0.4) 20%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0.4) 82%,
+        transparent 82%,
+        transparent 100%
+      ),
       /* Main street gradient */
       linear-gradient(
         to right,
