@@ -265,6 +265,7 @@ footer {
   }
   .road-container::before {
     content: "";
+    width: 100%;
     max-width: 1000px;
     background: 
       /* Red and white blocks pattern for sidewalks */
