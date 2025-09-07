@@ -272,13 +272,13 @@ footer {
     left: 50%;
     top: 0;
     bottom: 0;
-    width: 4px;
+    width: 16px;
     background: repeating-linear-gradient(
       to bottom,
       #ffff00 0px,      /* Yellow line starts */
-      #ffff00 30px,     /* Yellow line continues for 30px */
-      transparent 30px, /* Gap starts */
-      transparent 60px  /* Gap continues for 30px */
+      #ffff00 120px,     /* Yellow line continues for 30px */
+      transparent 120px, /* Gap starts */
+      transparent 240px  /* Gap continues for 30px */
     );
     transform: translateX(-50%);
     z-index: -1;
