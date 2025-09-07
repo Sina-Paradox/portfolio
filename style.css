@@ -276,7 +276,6 @@ footer {
       ),
       /* Red and white blocks pattern for sidewalks */
       linear-gradient(
-        to bottom,
         45deg,
         transparent 0%,
         transparent 15%,        
@@ -290,7 +289,6 @@ footer {
         transparent 100%,
       ),
       linear-gradient(
-        to bottom,
         315deg,
         transparent 0%,        
         transparent 82%,        
@@ -303,7 +301,7 @@ footer {
         transparent 85%,        
         transparent 100%
       );
-    background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
+      background-size: 20px 20px, 20px 20px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     min-height: 100vh;
   }
   .road-container {
