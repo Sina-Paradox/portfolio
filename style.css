@@ -247,6 +247,9 @@ footer {
 @media (min-width: 768px) {
   body {
     background: 
+      /* Subtle concrete texture pattern */
+      radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #d0d0d0 1px, transparent 1px),
       /* Red and white blocks pattern for sidewalks */
       linear-gradient(
         45deg,
@@ -270,9 +273,6 @@ footer {
         transparent 85%,        
         transparent 100%
       ),
-      /* Subtle concrete texture pattern */
-      radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, #d0d0d0 1px, transparent 1px),
       /* Sidewalk elevation shadow */
       linear-gradient(
         to right,
