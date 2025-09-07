@@ -10,7 +10,21 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
