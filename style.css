@@ -92,6 +92,9 @@ footer {
   margin-top: 40px;
 }
 
+.about p {
+  text-indent: 4ch;
+}
 /* Qualities Section Styling */
 .qualities-grid {
   display: grid;
@@ -134,7 +137,6 @@ footer {
   font-size: 0.95em;
   line-height: 1.4;
 }
-
 /* Contact Section Styling */
 .contact-grid {
   display: grid;
@@ -185,7 +187,6 @@ footer {
   color: #666;
   font-size: 0.9em;
 }
-
 /* Projects Section Styling */
 .projects-grid {
   display: grid;
