@@ -254,28 +254,17 @@ footer {
     );
     min-height: 100vh;
   }
-
   .road-container {
     max-width: 800px;
-    margin: 0 auto;
-    background: transparent;
-    position: relative;
-    padding: 20px;
-    min-height: 100vh;
-  }
-
-  .road-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50px;
-    right: -50px;
-    bottom: 0;
+    margin: -20px auto;
     background: rgba(44, 44, 44, 0.9);
     box-shadow:
       inset 0 0 50px rgba(0, 0, 0, 0.3),
       0 0 20px rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    padding: 40px 20px;
+    min-height: calc(100vh + 40px);
+    position: relative;
+    z-index: 1;
   }
 }
 
