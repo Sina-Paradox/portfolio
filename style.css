@@ -250,10 +250,21 @@ footer {
       /* Red and white blocks pattern for sidewalks */
       repeating-linear-gradient(
         45deg,
-        #ff4444 0px,
-        #ff4444 8px,
-        #ffffff 8px,
-        #ffffff 16px
+        transparent 0%,
+        transparent 15%,        
+        #ff4444 15%,
+        #ff4444 16%,
+        #ffffff 17%,
+        #ffffff 18%,
+        315deg,
+        transparent 18%,        
+        transparent 82%,        
+        #ff4444 82%,
+        #ff4444 83%,
+        #ffffff 84%,
+        #ffffff 85%,
+        transparent 85%,        
+        transparent 100%
       ),
       /* Subtle concrete texture pattern */
       radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
