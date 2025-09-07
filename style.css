@@ -249,7 +249,7 @@ footer {
     /* Main street gradient - base layer */
     background: 
       /* Red and white blocks pattern for sidewalks */
-      linear-gradient(
+      repeating-linear-gradient(
         45deg,
         transparent 0%,
         transparent 15%,        
@@ -262,7 +262,7 @@ footer {
         transparent 18%,
         transparent 100%,
       ),
-      linear-gradient(
+      repeating-linear-gradient(
         -45deg,
         transparent 0%,        
         transparent 82%,        
