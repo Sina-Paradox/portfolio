@@ -250,29 +250,6 @@ footer {
       /* Subtle concrete texture pattern */
       radial-gradient(circle at 25% 25%, #d0d0d0 1px, transparent 1px),
       radial-gradient(circle at 75% 75%, #d0d0d0 1px, transparent 1px),
-      /* Red and white blocks pattern for sidewalks */
-      linear-gradient(
-        45deg,
-        transparent 0%,
-        transparent 15%,        
-        #ff4444 15%,
-        #ff4444 16.5%,
-        #ffffff 16.5%,
-        #ffffff 17.5%,
-        transparent 18%,
-        transparent 100%,
-      ),
-      linear-gradient(
-        315deg,
-        transparent 0%,        
-        transparent 82%,        
-        #ff4444 82%,
-        #ff4444 83.5%,
-        #ffffff 83.5%,
-        #ffffff 84.5%,
-        transparent 85%,        
-        transparent 100%
-      ),
       /* Sidewalk elevation shadow */
       linear-gradient(
         to right,
@@ -296,6 +273,33 @@ footer {
         #2c2c2c 80%,          /* Road continues - dark asphalt */
         #c0c0c0 80%,          /* Right sidewalk starts */
         #c0c0c0 100%          /* Right sidewalk ends */
+      ),
+      /* Red and white blocks pattern for sidewalks */
+      linear-gradient(
+        45deg,
+        transparent 0%,
+        transparent 15%,        
+        #ff0000 15%,
+        #ff0000 16%,
+        #ffffff 16%,
+        #ffffff 17%,
+        #ff0000 17%,
+        #ff0000 18%,
+        transparent 18%,
+        transparent 100%,
+      ),
+      linear-gradient(
+        315deg,
+        transparent 0%,        
+        transparent 82%,        
+        #ff0000 82%,
+        #ff0000 83%,
+        #ffffff 83%,
+        #ffffff 84%,
+        #ff0000 84%,
+        #ff0000 85%,
+        transparent 85%,        
+        transparent 100%
       );
     background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
     min-height: 100vh;
