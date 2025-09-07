@@ -288,7 +288,6 @@ footer {
         #c0c0c0 80%,          /* Right sidewalk starts */
         #c0c0c0 100%          /* Right sidewalk ends */
       );
-    background-size: 20px 20px, 20px 20px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     min-height: 100vh;
   }
   .road-container {
