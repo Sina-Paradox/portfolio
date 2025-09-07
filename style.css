@@ -247,27 +247,8 @@ footer {
 @media (min-width: 768px) {
   body {
     /* Main street gradient - base layer */
-    background: rgba(192, 192, 192, 0.55);
+    background: rgba(192, 192, 192, 0.431);
     min-height: 100vh;
-  }
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% + 40px);
-    max-width: 840px;
-    height: 100vh;
-    z-index: 0; 
-    pointer-events: none;
-    background: repeating-linear-gradient(
-      to bottom,
-      #ff0000 0px,
-      #ff0000 30px,
-      #ffff00 60px,
-      #ffff00 90px 
-    );
   }
   .road-container {
     max-width: 800px;
