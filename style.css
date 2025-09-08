@@ -260,6 +260,7 @@ footer {
 /* Street/Sidewalk Design for Large Screens */
 @media (min-width: 768px) {
   body {
+    width: auto;
     background: 
       repeating-linear-gradient(
         to right,
