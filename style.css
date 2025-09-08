@@ -261,16 +261,7 @@ footer {
 @media (min-width: 768px) {
   body {
     width: auto;
-    background: 
-      repeating-linear-gradient(
-        to right,
-        rgb(68, 196, 56) 0%,
-        rgba(68, 196, 56) 5%,
-        rgba(82, 82, 82) 5%,
-        rgba(82, 82, 82) 95%,
-        rgba(68, 196, 56) 95%,
-        rgba(68, 196, 56) 100%,
-      );
+    background: rgb(79, 167, 71) 5%;
     min-height: 100vh;
   }
   .road-container {
