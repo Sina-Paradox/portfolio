@@ -291,6 +291,23 @@ footer {
     transform-origin: top center;
     overflow: hidden;
     box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+  }
+  .road::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      yellow 40px,
+      yellow 80px,
+      transparent 80px,
+      transparent 160px
+    );
+    transform: translateX(-50%);
+    box-shadow: 0 0 6px rgba(255, 255, 0, 0.8);
   }  
 }
 
