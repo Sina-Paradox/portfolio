@@ -287,7 +287,7 @@ footer {
     right: 0;
     left: 0;
     height: 700px; 
-    background: linear-gradient(to bottom, #3a3a3a, #1c1c1c);
+    background: rgb(245, 2, 2);
     transform: rotateX(60deg) scaleY(0.6);
     transform-origin: top center;
     overflow: hidden;
