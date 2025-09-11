@@ -316,6 +316,13 @@ footer {
   body {
     padding: 10px;
   }
+  #loader .loader-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #7c2e28;
+    letter-spacing: 3px;
+    animation: pulse 2s infinite;
+  }
   header {
     padding-left: 0;
   }
@@ -327,16 +334,5 @@ footer {
   }
   section {
     padding: 10px;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
