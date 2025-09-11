@@ -267,7 +267,7 @@ footer {
   .road-container {
     max-width: 800px;
     margin: -50px auto;
-    background: rgba(44, 44, 44, 0.9);
+    background: rgb(255, 237, 38);
     box-shadow:
       inset 0 0 50px rgba(0, 0, 0, 0.3),
       0 0 20px rgba(0, 0, 0, 0.5);
