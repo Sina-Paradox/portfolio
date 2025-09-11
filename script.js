@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   
     const loadTime = Date.now() - startTime;
   
-    const minDuration = 2500;
+    const minDuration = 3000;
   
     const delay = loadTime < minDuration ? (minDuration - loadTime) : 0;
   
