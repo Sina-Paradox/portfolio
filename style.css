@@ -1,10 +1,9 @@
-
 body {
   animation: fadeIn 0.8s ease-in;
   font-family: 'Inter', Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background: #f5f6fa;
+  background: #f0ae88;
   color: #222;
 }
 
@@ -261,7 +260,7 @@ footer {
 @media (min-width: 768px) {
   body {
     width: auto;
-    background: rgb(79, 167, 71) 5%;
+    background: #7c2e28;
     min-height: 100vh;
   }
   .road-container {
@@ -272,7 +271,7 @@ footer {
     margin-top: -200px;
     padding-top: 200px;
     min-height: 100vh;
-    background: rgb(245, 2, 2);
+    background: #f0ae88;
     box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
   }
 }
