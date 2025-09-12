@@ -44,36 +44,65 @@ body.loading {
 }
 
 header {
-  text-align: center;
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 28px 24px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-header:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
-  font-size: 2.2em;
-  margin: 0 0 10px 0;
-  font-weight: 600;
+  font-size: 10em;
+  font-weight: bold;
   letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
-  font-size: 1.2em;
-  font-weight: 400;
-  color: #555;
-  margin: 0 0 0 10px 0;
+  font-size: 9em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.marquee-box {
+  width: 300px;
+  height: 40px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  position: absolute;
+}
+
+.marquee-text {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  animation: slide 8s linear infinite;
+  font-size: 2em;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.road-container {
+  position: absolute;
+  margin-top: -100px;
+  padding-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  min-height: 100vh;
+  background: #f0ae88;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
 }
 
 .profile-photo {
@@ -113,6 +142,7 @@ section:hover {
 
 a {
   color: #0077b5;
+  position: relative;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -298,17 +328,6 @@ footer {
     width: auto;
     background: #7c2e28;
     min-height: 100vh;
-  }
-  .road-container {
-    position: absolute;
-    margin-top: -200px;
-    padding-top: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    min-height: 100vh;
-    background: #f0ae88;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
   }
 }
 
