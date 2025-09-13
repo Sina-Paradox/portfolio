@@ -361,14 +361,13 @@ footer {
     font-size: 3em;
     font-weight: bold;
     letter-spacing: -1px;
-    padding-bottom: 2px;
     color: #7c2e28;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 5;
   }
   
   h2 {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     letter-spacing: -1px;
     color: #7c2e28;
@@ -378,7 +377,7 @@ footer {
   
   .marquee-box {
     width: 100px;
-    height: 10px;
+    height: 20px;
     overflow: hidden;
     background-color: #7c2e28;
     border-radius: 8px;
@@ -391,7 +390,7 @@ footer {
     position: absolute;
     white-space: nowrap;
     animation: slide 8s linear infinite;
-    font-size: 0.5em;
+    font-size: 1em;
   }
   
   @keyframes slide {
