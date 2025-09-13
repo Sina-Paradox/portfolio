@@ -401,4 +401,13 @@ footer {
   section {
     padding: 10px;
   }
+  .road-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-height: 100vh;
+    background: #f0ae88;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+  }
 }
