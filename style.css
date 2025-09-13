@@ -92,7 +92,7 @@ h2 {
 }
 
 @keyframes slide {
-  0% { transform: translateX(0%); }
+  0% { transform: translateX(50%); }
   100% { transform: translateX(-100%); }
 }
 
@@ -358,7 +358,7 @@ footer {
   }
   
   h1 {
-    font-size: 3em;
+    font-size: 4.5em;
     font-weight: bold;
     letter-spacing: -1px;
     color: #7c2e28;
@@ -367,7 +367,7 @@ footer {
   }
   
   h2 {
-    font-size: 3em;
+    font-size: 4.5em;
     font-weight: bold;
     letter-spacing: -1px;
     color: #7c2e28;
@@ -376,8 +376,8 @@ footer {
   }
   
   .marquee-box {
-    width: 100px;
-    height: 20px;
+    width: 150px;
+    height: 30px;
     overflow: hidden;
     background-color: #7c2e28;
     border-radius: 8px;
@@ -390,11 +390,11 @@ footer {
     position: absolute;
     white-space: nowrap;
     animation: slide 8s linear infinite;
-    font-size: 1em;
+    font-size: 1.5em;
   }
   
   @keyframes slide {
-    0% { transform: translateX(0%); }
+    0% { transform: translateX(50%); }
     100% { transform: translateX(-100%); }
   }
   section {
