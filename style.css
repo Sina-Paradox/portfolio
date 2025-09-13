@@ -371,13 +371,13 @@ footer {
     font-weight: bold;
     letter-spacing: -1px;
     color: #7c2e28;
-    margin-top: 0;
+    margin-top: 5;
     margin-bottom: 0;
   }
   
   .marquee-box {
     width: 150px;
-    height: 30px;
+    height: 20px;
     overflow: hidden;
     background-color: #7c2e28;
     border-radius: 8px;
@@ -390,7 +390,7 @@ footer {
     position: absolute;
     white-space: nowrap;
     animation: slide 8s linear infinite;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   
   @keyframes slide {
