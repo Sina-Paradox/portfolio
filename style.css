@@ -60,6 +60,8 @@ h1 {
   font-weight: bold;
   letter-spacing: -1px;
   color: #7c2e28;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -67,6 +69,8 @@ h2 {
   font-weight: bold;
   letter-spacing: -1px;
   color: #7c2e28;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .marquee-box {
@@ -359,6 +363,8 @@ footer {
     letter-spacing: -1px;
     padding-bottom: 2px;
     color: #7c2e28;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   h2 {
@@ -366,6 +372,8 @@ footer {
     font-weight: bold;
     letter-spacing: -1px;
     color: #7c2e28;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   .marquee-box {
