@@ -16,3 +16,7 @@ window.addEventListener("load", () => {
       body.classList.remove("loading");
     }, delay);
 });
+
+window.history.scrollRestoration = "manual";
+
+window.scrollTo(0, 0);
