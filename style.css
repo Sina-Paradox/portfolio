@@ -241,7 +241,7 @@ footer {
 }
 
 .contact-item:hover {
-  background: #fff;
+  background: #e3f2fd;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border: 2px solid #e3f2fd;
@@ -289,7 +289,7 @@ footer {
 }
 
 .project-item:hover {
-  background: #fff;
+  background: #e3f2fd;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
