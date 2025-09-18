@@ -157,5 +157,25 @@
 
   <script src="script.js"></script>
 
+  <div class="auth-modal" id="authModal">
+    <div class="auth-modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Sign In</h2>
+      <form id="authForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required autocomplete="off">
+        </div>
+        <button type="submit" id="submitAuthBtn">Sign In</button>
+      </form>
+    </div>
+  </div>
+  <div class="message-modal" id="messageModal">
+    <div class="message-modal-content">
+      <p id="messageText"></p>
+      <button id="closeMessageBtn">OK</button>
+    </div>
+  </div>
+
 </body>
 </html>
