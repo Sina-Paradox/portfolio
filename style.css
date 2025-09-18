@@ -325,6 +325,82 @@ footer {
   transform: translateX(4px);
 }
 
+.user-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.user-menu-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0ae88;
+  border: none;
+  color: #7c2e28;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.user-menu-btn:hover {
+  transform: scale(1.1);
+  background: #f0ae88;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.user-menu:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content {
+  padding: 10px 0;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content button:hover {
+  background: #f0f0f0;
+  color: #7c2e28;
+}
+
+
+
 @media (min-width: 768px) {
   body {
     width: auto;

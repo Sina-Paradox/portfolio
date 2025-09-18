@@ -22,3 +22,37 @@ window.addEventListener("load", () => {
 window.history.scrollRestoration = "manual";
 
 window.scrollTo(0, 0);
+
+
+
+const userMenuBtn = document.getElementById('userMenuBtn');
+const userDropdown = document.getElementById('userDropdown');
+
+userMenuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  userDropdown.classList.toggle('show');
+});
+
+document.addEventListener('click', (e) => {
+  if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+    userDropdown.classList.remove('show');
+  }
+});
+
+userDropdown.addEventListener('mouseenter', () => {
+  userDropdown.classList.add('show');
+});
+
+userDropdown.addEventListener('mouseleave', () => {
+  if (!userDropdown.classList.contains('force-open')) {
+    userDropdown.classList.remove('show');
+  }
+});
+
+userMenuBtn.addEventListener('click', () => {
+  if (userDropdown.classList.contains('show')) {
+    userDropdown.classList.add('force-open');
+  } else {
+    userDropdown.classList.remove('force-open');
+  }
+});
