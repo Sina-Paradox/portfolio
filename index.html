@@ -176,6 +176,33 @@
       <button id="closeMessageBtn">OK</button>
     </div>
   </div>
+  <div class="profile-modal" id="profileModal">
+    <div class="profile-modal-content">
+      <span class="close-profile-modal" id="closeProfileModal">&times;</span>
+      <h2>Choose Your Profile Picture</h2>
+      <div class="profile-grid">
+        <div class="profile-option" data-img="1">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiM3QzJFMjgiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iI2YwYWU4OCIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iMzUiIHI9IjEwIiBmaWxsPSIjZjBhZTg4Ii8+PHBhdGggZD0iTTM1IDcwQzM1IDYwIDQxLjUgNTUgNTAgNTVDNTguNSA1NSA2NSA2MCA2NSA3MCIgZmlsbD0iI2YwYWU4OCIvPjwvc3ZnPg==" alt="Profile 1">
+        </div>
+        <div class="profile-option" data-img="2">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiM0Mjg1RjQiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI2NSIgY3k9IjM1IiByPSIxMCIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMzUgNzBDMzUgNjAgNDEuNSA1NSA1MCA1NUM1OC41IDU1IDY1IDYwIDY1IDcwIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" alt="Profile 2">
+        </div>
+        <div class="profile-option" data-img="3">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiNFQTNCMzciLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iIzJDMkMyQyIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iMzUiIHI9IjEwIiBmaWxsPSIjMkMyQzJDIi8+PHBhdGggZD0iTTM1IDcwQzM1IDYwIDQxLjUgNTUgNTAgNTVDNTguNSA1NSA2NSA2MCA2NSA3MCIgZmlsbD0iIzJDMkMyQyIvPjwvc3ZnPg==" alt="Profile 3">
+        </div>
+        <div class="profile-option" data-img="4">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiMzNDhBNjkiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iI0ZGQ0E5QyIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iMzUiIHI9IjEwIiBmaWxsPSIjRkZDQTlDIi8+PHBhdGggZD0iTTM1IDcwQzM1IDYwIDQxLjUgNTUgNTAgNTVDNTguNSA1NSA2NSA2MCA2NSA3MCIgZmlsbD0iI0ZGQ0E5QyIvPjwvc3ZnPg==" alt="Profile 4">
+        </div>
+        <div class="profile-option" data-img="5">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiM3QzJFMjgiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iI0ZGRiIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iMzUiIHI9IjEwIiBmaWxsPSIjRkZGIi8+PHBhdGggZD0iTTM1IDcwQzM1IDYwIDQxLjUgNTUgNTAgNTVDNTguNSA1NSA2NSA2MCA2NSA3MCIgZmlsbD0iI0ZGRiIvPjxjaXJjbGUgY3g9IjM1IiBjeT0iMzUiIHI9IjUiIGZpbGw9IiM3QzJFMjgiLz48Y2lyY2xlIGN4PSI2NSIgY3k9IjM1IiByPSI1IiBmaWxsPSIjN0MyRTI4Ii8+PC9zdmc+" alt="Profile 5">
+        </div>
+        <div class="profile-option" data-img="6">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiNmMGFlODgiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iIzJDMkMyQyIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iMzUiIHI9IjEwIiBmaWxsPSIjMkMyQzJDIi8+PHBhdGggZD0iTTM1IDcwQzM1IDYwIDQxLjUgNTUgNTAgNTVDNTguNSA1NSA2NSA2MCA2NSA3MCIgZmlsbD0iIzJDMkMyQyIvPjxjaXJjbGUgY3g9IjM1IiBjeT0iMzUiIHI9IjUiIGZpbGw9IiNmMGFlODgiLz48Y2lyY2xlIGN4PSI2NSIgY3k9IjM1IiByPSI1IiBmaWxsPSIjZjBhZTg4Ii8+PC9zdmc+" alt="Profile 6">
+        </div>
+      </div>
+      <button id="confirmProfileBtn" disabled>Confirm Selection</button>
+    </div>
+  </div>
 
 </body>
 </html>

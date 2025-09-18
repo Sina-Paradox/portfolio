@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+  const currentUser = localStorage.getItem('currentUser');
   const authModal = document.getElementById('authModal');
   const messageModal = document.getElementById('messageModal');
   const closeModal = document.getElementById('closeModal');
@@ -67,7 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
   const authForm = document.getElementById('authForm');
   const submitAuthBtn = document.getElementById('submitAuthBtn');
   const messageText = document.getElementById('messageText');
-
+  const profileModal = document.getElementById('profileModal');
+  const closeProfileModal = document.getElementById('closeProfileModal');
+  const confirmProfileBtn = document.getElementById('confirmProfileBtn');
+  
+  let selectedProfile = null;
+  let currentSignUpUsername = '';
   let isSignUpMode = false;
 
   function showMessage(text) {
@@ -130,15 +136,26 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
       `;
       
-      // Add sign out functionality
       document.getElementById('signOutBtn').addEventListener('click', signOutUser);
+      
+      let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
+      if (userProfiles[username]) {
+        updateUserButtonProfile(userProfiles[username]);
+      }
     } else {
       dropdownContent.innerHTML = `
         <button id="signInBtn">Sign In</button>
         <button id="signUpBtn">Sign Up</button>
       `;
       
-      // Reattach event listeners
+      const userMenuBtn = document.getElementById('userMenuBtn');
+      userMenuBtn.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      `;
+      
       document.getElementById('signInBtn').addEventListener('click', () => {
         isSignUpMode = false;
         modalTitle.textContent = 'Sign In';
@@ -162,13 +179,85 @@ document.addEventListener("DOMContentLoaded", function() {
     showMessage('Signed out successfully');
     updateUserMenu(false);
     userDropdown.classList.remove('show');
+    const userMenuBtn = document.getElementById('userMenuBtn');
+    userMenuBtn.innerHTML = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    `;
   }
   
   function showProfileSelection(username) {
-    showMessage('Profile picture selection will be implemented next!');
+    currentSignUpUsername = username;
+    selectedProfile = null;
+
+    document.querySelectorAll('.profile-option').forEach(option => {
+      option.classList.remove('selected');
+    });
+    
+    confirmProfileBtn.disabled = true;
+    
+    profileModal.classList.add('show');
   }
 
-  const currentUser = localStorage.getItem('currentUser');
+  function updateUserButtonProfile(profileId) {
+    const userMenuBtn = document.getElementById('userMenuBtn');
+    const profileImg = document.querySelector(`.profile-option[data-img="${profileId}"] img`).src;
+    
+    userMenuBtn.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = profileImg;
+    img.alt = 'Profile';
+    img.style.width = '150%';
+    img.style.height = '150%';
+    img.style.borderRadius = '50%';
+    img.style.objectFit = 'contain';
+    userMenuBtn.appendChild(img);
+  }
+  
+  if (currentUser) {
+    let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
+    if (userProfiles[currentUser]) {
+      updateUserButtonProfile(userProfiles[currentUser]);
+    }
+  }
+
+  document.querySelectorAll('.profile-option').forEach(option => {
+    option.addEventListener('click', () => {
+      document.querySelectorAll('.profile-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      
+      option.classList.add('selected');
+  
+      selectedProfile = option.getAttribute('data-img');
+      
+      confirmProfileBtn.disabled = false;
+    });
+  });
+
+  closeProfileModal.addEventListener('click', () => {
+    profileModal.classList.remove('show');
+  });
+
+  confirmProfileBtn.addEventListener('click', () => {
+    if (selectedProfile && currentSignUpUsername) {
+      let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
+      userProfiles[currentSignUpUsername] = selectedProfile;
+      localStorage.setItem('userProfiles', JSON.stringify(userProfiles));
+      
+      profileModal.classList.remove('show');
+     
+      showMessage('Profile picture saved successfully!');
+      
+      localStorage.setItem('currentUser', currentSignUpUsername);
+      updateUserMenu(true, currentSignUpUsername);
+      
+      updateUserButtonProfile(selectedProfile);
+    }
+  });
+
   if (currentUser) {
     updateUserMenu(true, currentUser);
   }
