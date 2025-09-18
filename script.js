@@ -59,10 +59,7 @@ function signInWithGoogle() {
 function updateUI(user) {
   if (user) {
     console.log("User is signed in:", user);
-    authButtonContent.innerHTML = `
-      <img src="${user.photoURL}" alt="Profile" style="width: 30px; height: 30px; border-radius: 50%;">
-      <span>Sign Out</span>
-    `;
+    authButtonContent.innerHTML = `<img src="${user.photoURL}" alt="Profile" class="profile-img">`;
   } else {
     console.log("User is signed out");
     authButtonContent.innerHTML = 'G';
