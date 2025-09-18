@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sina Khalili</title>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-btn {
+            margin-top: 1rem;
+            padding: 12px 24px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .login-btn:hover {
+            background-color: #356ac3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Sign in to Portfolio</h2>
+        <p>Please sign in to access your personalized experience.</p>
+        <button id="googleSignInBtn" class="login-btn">Sign in with Google</button>
+    </div>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDeZRotr7SVHg-aqRqR9pNFpOJTMFwKQXo",
+            authDomain: "portfolio-7d11f.firebaseapp.com",
+            projectId: "portfolio-7d11f",
+            storageBucket: "portfolio-7d11f.firebasestorage.app",
+            messagingSenderId: "256853786845",
+            appId: "1:256853786845:web:80c314acbb77b68ab2db34",
+            measurementId: "G-RQ0ZP0GY0R"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const googleSignInButton = document.getElementById('googleSignInBtn');
+
+        function signInWithGoogleRedirect() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithRedirect(provider);
+        }
+
+        googleSignInButton.addEventListener('click', signInWithGoogleRedirect);
+
+        auth.getRedirectResult()
+        .then((result) => {
+            if (result.user) {
+                console.log('Success! User signed in:', result.user);
+                window.location.href = 'https://sina-paradox.github.io/portfolio/';
+            }
+        }).catch((error) => {
+            console.error("Error during redirect sign-in:", error);
+            alert("Login failed: " + error.message);
+        });
+    </script>
+    
+</body>
+</html>
