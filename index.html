@@ -12,9 +12,18 @@
 </head>
 <body class="loading">
 
-  <button id="googleSignInBtn" class="auth-btn">
-    <span class="g-logo">G</span>
-  </button>
+  <div id="authContainer" class="auth-container">
+
+    <button id="googleAuthBtn" class="auth-btn">
+      <span id="authButtonContent" class="g-logo">G</span>
+    </button>
+
+    <div id="authDropdown" class="auth-dropdown">
+      <button id="signOutButton" class="sign-out-btn">
+        Sign Out
+      </button>
+    </div>
+  </div>
   
   <div id="loader">
     <div class="loader-text">Paradox</div>

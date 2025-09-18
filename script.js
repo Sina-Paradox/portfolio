@@ -36,10 +36,12 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
-
 const auth = firebase.auth();
-
-const googleSignInButton = document.getElementById('googleSignInBtn');
+const authContainer = document.getElementById('authContainer');
+const googleAuthButton = document.getElementById('googleAuthBtn');
+const authButtonContent = document.getElementById('authButtonContent');
+const authDropdown = document.getElementById('authDropdown');
+const signOutButton = document.getElementById('signOutButton');
 
 function signInWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -54,4 +56,49 @@ function signInWithGoogle() {
     });
 }
 
-googleSignInButton.addEventListener('click', signInWithGoogle);
+function updateUI(user) {
+  if (user) {
+    console.log("User is signed in:", user);
+    authButtonContent.innerHTML = `
+      <img src="${user.photoURL}" alt="Profile" style="width: 30px; height: 30px; border-radius: 50%;">
+      <span>Sign Out</span>
+    `;
+  } else {
+    console.log("User is signed out");
+    authButtonContent.innerHTML = 'G';
+    authDropdown.classList.remove('show');
+  }
+}
+
+function toggleDropdown() {
+  authDropdown.classList.toggle('show');
+}
+
+auth.onAuthStateChanged(function(user) {
+  updateUI(user);
+});
+
+googleAuthButton.addEventListener('click', function() {
+  const user = auth.currentUser;
+
+  if (user) {
+    toggleDropdown();
+  } else {
+    signInWithGoogle();
+  }
+});
+
+signOutButton.addEventListener('click', function() {
+  auth.signOut().then(() => {
+    console.log("User signed out successfully");
+    authDropdown.classList.remove('show');
+  }).catch((error) => {
+    console.error("Error during sign-out:", error);
+  });
+});
+
+document.addEventListener('click', function(event) {
+  if (!authContainer.contains(event.target)) {
+    authDropdown.classList.remove('show');
+  }
+});
