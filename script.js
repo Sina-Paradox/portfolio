@@ -94,7 +94,16 @@ document.addEventListener("DOMContentLoaded", function() {
       if (exists) {
         showMessage('Successful!!!');
         localStorage.setItem('currentUser', username);
+
+        let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
+        let userTheme = localStorage.getItem('userTheme') || 'default';
+        updateTheme(userTheme);
+        
         updateUserMenu(true, username);
+        
+        if (userProfiles[username]) {
+          updateUserButtonProfile(userProfiles[username]);
+        }
       } else {
         showMessage('Please Sign Up First!!!');
       }
@@ -113,6 +122,10 @@ document.addEventListener("DOMContentLoaded", function() {
       `;
       
       document.getElementById('signOutBtn').addEventListener('click', signOutUser);
+      document.getElementById('changeThemeBtn').addEventListener('click', showThemeSelection);
+
+      let userTheme = localStorage.getItem('userTheme') || 'default';
+      updateTheme(userTheme);
       
       let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
       if (userProfiles[username]) {
