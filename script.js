@@ -27,39 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const userMenuBtn = document.getElementById('userMenuBtn');
   const userDropdown = document.getElementById('userDropdown');
-
-  userMenuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    userDropdown.classList.toggle('show');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
-      userDropdown.classList.remove('show');
-    }
-  });
-
-  userDropdown.addEventListener('mouseenter', () => {
-    userDropdown.classList.add('show');
-  });
-
-  userDropdown.addEventListener('mouseleave', () => {
-    if (!userDropdown.classList.contains('force-open')) {
-      userDropdown.classList.remove('show');
-    }
-  });
-
-  userMenuBtn.addEventListener('click', () => {
-    if (userDropdown.classList.contains('show')) {
-      userDropdown.classList.add('force-open');
-    } else {
-      userDropdown.classList.remove('force-open');
-    }
-  });
-
-
-
   const currentUser = localStorage.getItem('currentUser');
+  const savedTheme = currentUser ? (localStorage.getItem('userTheme') || 'default') : 'default';
+  updateTheme(savedTheme);
   const authModal = document.getElementById('authModal');
   const messageModal = document.getElementById('messageModal');
   const closeModal = document.getElementById('closeModal');
@@ -71,10 +41,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const profileModal = document.getElementById('profileModal');
   const closeProfileModal = document.getElementById('closeProfileModal');
   const confirmProfileBtn = document.getElementById('confirmProfileBtn');
-  
+  const themeModal = document.getElementById('themeModal');
+  const closeThemeModal = document.getElementById('closeThemeModal');
+  const confirmThemeBtn = document.getElementById('confirmThemeBtn');
+
+  let selectedTheme = null;
   let selectedProfile = null;
   let currentSignUpUsername = '';
   let isSignUpMode = false;
+
+
 
   function showMessage(text) {
     messageText.textContent = text;
@@ -176,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function signOutUser() {
     localStorage.removeItem('currentUser');
+    updateTheme('default');
     showMessage('Signed out successfully');
     updateUserMenu(false);
     userDropdown.classList.remove('show');
@@ -215,6 +192,117 @@ document.addEventListener("DOMContentLoaded", function() {
     img.style.objectFit = 'contain';
     userMenuBtn.appendChild(img);
   }
+
+  function showThemeSelection() {
+    selectedTheme = null;
+
+    document.querySelectorAll('.theme-option').forEach(option => {
+      option.classList.remove('selected');
+    });
+
+    themeModal.classList.add('show');
+  }
+
+  function updateTheme(themeName) {
+    document.body.classList.remove('theme-blue', 'theme-green', 'theme-purple', 'theme-dark', 'theme-sunset');
+    
+    if (themeName !== 'default') {
+      document.body.classList.add(`theme-${themeName}`);
+    }
+    
+    if (localStorage.getItem('currentUser')) {
+      localStorage.setItem('userTheme', themeName);
+    }
+    
+    applyThemeColors(themeName);
+  }
+
+  function applyThemeColors(themeName) {
+    const root = document.documentElement;
+    
+    switch(themeName) {
+      case 'blue':
+        root.style.setProperty('--primary-color', '#6bb5ff');
+        root.style.setProperty('--secondary-color', '#1a4e8e');
+        break;
+      case 'green':
+        root.style.setProperty('--primary-color', '#88d8b0');
+        root.style.setProperty('--secondary-color', '#2e7c32');
+        break;
+      case 'purple':
+        root.style.setProperty('--primary-color', '#c8a2c8');
+        root.style.setProperty('--secondary-color', '#6a1b9a');
+        break;
+      case 'dark':
+        root.style.setProperty('--primary-color', '#666666');
+        root.style.setProperty('--secondary-color', '#222222');
+        break;
+      case 'sunset':
+        root.style.setProperty('--primary-color', '#ff9a8b');
+        root.style.setProperty('--secondary-color', '#ff6b6b');
+        break;
+      default: 
+        root.style.setProperty('--primary-color', '#f0ae88');
+        root.style.setProperty('--secondary-color', '#7c2e28');
+    }
+  }
+
+  document.querySelectorAll('.theme-option').forEach(option => {
+    option.addEventListener('click', () => {
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      
+      option.classList.add('selected');
+      selectedTheme = option.getAttribute('data-theme');
+    });
+  });
+
+  closeThemeModal.addEventListener('click', () => {
+    themeModal.classList.remove('show');
+  });
+
+  confirmThemeBtn.addEventListener('click', () => {
+    if (selectedTheme) {
+      updateTheme(selectedTheme);
+      themeModal.classList.remove('show');
+      
+      showMessage('Theme applied successfully! Welcome to your new account!');
+      
+      localStorage.setItem('currentUser', currentSignUpUsername);
+      updateUserMenu(true, currentSignUpUsername);
+      updateUserButtonProfile(selectedProfile);
+    }
+  });
+
+  userMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    userDropdown.classList.toggle('show');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+      userDropdown.classList.remove('show');
+    }
+  });
+
+  userDropdown.addEventListener('mouseenter', () => {
+    userDropdown.classList.add('show');
+  });
+
+  userDropdown.addEventListener('mouseleave', () => {
+    if (!userDropdown.classList.contains('force-open')) {
+      userDropdown.classList.remove('show');
+    }
+  });
+
+  userMenuBtn.addEventListener('click', () => {
+    if (userDropdown.classList.contains('show')) {
+      userDropdown.classList.add('force-open');
+    } else {
+      userDropdown.classList.remove('force-open');
+    }
+  });
   
   if (currentUser) {
     let userProfiles = JSON.parse(localStorage.getItem('userProfiles') || '{}');
@@ -248,13 +336,10 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem('userProfiles', JSON.stringify(userProfiles));
       
       profileModal.classList.remove('show');
-     
-      showMessage('Profile picture saved successfully!');
       
-      localStorage.setItem('currentUser', currentSignUpUsername);
-      updateUserMenu(true, currentSignUpUsername);
-      
-      updateUserButtonProfile(selectedProfile);
+      setTimeout(() => {
+        showThemeSelection();
+      }, 500);
     }
   });
 
